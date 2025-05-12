@@ -174,4 +174,105 @@ nested_dictionary = {
 # print(dictionary.items()) # separates into tuples
 
 
+""" TUPLES """
+
+# my_tuple = (1,3,2,3, 'four')
+# print(len(my_tuple))
+# print(my_tuple[3])
+# print(my_tuple[-1])
+# print(my_tuple.index(2))
+# print(my_tuple.count(3))
+
+
+
+""" SET """
+# y = {1, 2, 3}
+# y.add(3)
+
+
+# print(y)
+
+# my_list = [1,2,3,1,2,3,4,5,4,6]
+# print(set(my_list))
+
+
+""" BOOLEAN """
+
+# a = True
+# print(not a)
+
+# print(1 > 2)
+
+""" COMPARISON"""
+# 2 > 1
+# 2 < 3
+# 1 >= 1
+# 1 <= 4
+# 1 == 1
+
+# print(1 == '1')
+
+# print('hi' == 'hi')
+# print('hi' == 'bye')
+
+""" LOGICAL """
+
+# print((1<2) and (2>3))
+# print((1<2) or (2>3))
+
+# if 1 < 2:
+#     print('hello')
+
+""" LOOPS """
+
+# sequence = [1,2,3,4,2]
+
+# for val in sequence:
+#     print(val, '- Yes')
+
+# sequence = {
+#     'John': 4,
+#     'Doe': 8,
+#     'Moe': 5
+# }
+
+# for val in sequence:
+#     print('Key:', val, '- Value:', sequence[val])
+    
+# sequence = [(1,10), (2,20), (3, 30)] # tuple unpacking
+
+# # for val in sequence:
+# #     print(val[0])
+    
+# for item1, item2 in sequence:
+#     print(item1, item2)
+
+# i = 1
+
+# while i < 5:
+#     print(i)
+#     i += 1
+
+""" RANGE """
+
+# for i in range(5):
+#     print(i)
+    
+# for x in range(3,9):
+#     print(x)
+    
+# for y in range(5,21,3):
+#     print(y)
+
+# i = list(range(5))
+# print(i)
+
+x = [1,2,3,4]
+# out = []
+# for item in x:
+#     out.append(item**2)
+# print(out)
+
+print([item**2 for item in x]) # list comprehension
+
 

@@ -9,4 +9,4 @@ class Giraffe(Herbivore):
     
     def make_sound(self):
         self.change_energy_level(self.sound_energy_decrease)
-        print(f'{self.name} the {self.type}:\n\nGrunt, snort!\n')
+        print(f'\n{self.name} the {self.type}:\n\nGrunt, snort!\n')

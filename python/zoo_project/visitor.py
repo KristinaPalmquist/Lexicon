@@ -3,7 +3,7 @@ class Visitor:
     
     @classmethod
     def list_instances(cls):
-        print('Registered visitors:')
+        print('\nRegistered visitors:')
         print('-'*50)
         print('VISITOR NAME:'.ljust(20), 'AGE:'.rjust(5))
         for inst in cls.instances:

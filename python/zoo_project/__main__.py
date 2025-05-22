@@ -7,13 +7,16 @@ from fox import Fox
 from bear import Bear
 from visitor import Visitor
 
+show_full_menu = True
+show_animal_menu = True
+
 def main():
+    print('')
     print('-'*50)
     print("Welcome to Lexicon Zoo!!!")
     print('-'*50)
     register_visitors()
     menu()
-    
     
 def register_visitors():
     while True:
@@ -54,8 +57,12 @@ def create_new_animal(animal_class):
     return animal
         
 def new_animal():
-    user_animal_choice = input(f"""
-    What type of animal should be added?
+    global show_animal_menu
+    animal = None
+    while animal is None:
+        if show_animal_menu:
+            user_animal_choice = input(f"""
+    What type of animal do you want to add?
     {'-'*46}
     Enter B for BEAR
     Enter E for ELEPHANT
@@ -63,31 +70,39 @@ def new_animal():
     Enter G for GIRAFFE
     Enter L for LION
     Enter T for TURTLE
-    """)
+    """).lower()
+            show_animal_menu = False
+        else:
+            user_animal_choice = input("\nWhat type of animal do you want to add?\nType 'menu' to see the options:\n").lower()
+            if user_animal_choice == 'menu':
+                show_menu = True
+                continue
   
-    animal = ()
-    match user_animal_choice[0].upper():
-        case 'G' | 'giraffe':
-            animal = create_new_animal(Giraffe)
-        case 'L' | 'lion':
-            animal = create_new_animal(Lion)
-        case 'T' | 'turtle':
-            animal = create_new_animal(Turtle)
-        case 'B' | 'bear':
-            animal = create_new_animal(Bear)
-        case 'E' | 'elephant':
-            animal = create_new_animal(Elephant)
-        case 'F' | 'fox':
-            animal = create_new_animal(Fox)
-        case _:
-            print("I don't understand.\n Please choose one of the listed animals.")
-            new_animal()
+        match user_animal_choice[0]:
+            case 'g' | 'giraffe':
+                animal = create_new_animal(Giraffe)
+            case 'l' | 'lion':
+                animal = create_new_animal(Lion)
+            case 't' | 'turtle':
+                animal = create_new_animal(Turtle)
+            case 'b' | 'bear':
+                animal = create_new_animal(Bear)
+            case 'e' | 'elephant':
+                animal = create_new_animal(Elephant)
+            case 'f' | 'fox':
+                animal = create_new_animal(Fox)
+            case _:
+                print("I don't understand.\nPlease choose one of the listed animals.")
+                continue
 
     print(f'\nYour new animal {animal.name} has been added to the zoo!\n')
     Animal.list_instances()
     
 def menu():
-    user_menu_choice = input(f"""
+    global show_full_menu
+    while True:
+        if show_full_menu:
+            user_menu_choice = input(f"""
     What do you want to do?
     {'-'*46}
     Enter 1 to Add an animal
@@ -99,43 +114,85 @@ def menu():
     Enter 7 to List all Visitors
     Enter 8 to Exit the zoo
     """).lower()
+            show_full_menu = False
+        else:
+            user_menu_choice = input("\nWhat do you want to do?\nType 'menu' to see the options:\n").lower()
+            if user_menu_choice == 'menu':
+                show_full_menu = True
+                continue
 
-    match user_menu_choice:
-        case '1' | 'a':
-            new_animal()
-        case '2' | 'f':
-            Animal.list_instances()
-            user_animal_choice = input('Enter the number of the animal you want to feed:\n')
-            user_animal  = next((instan for instan in Animal.instances 
-                            if user_animal_choice == str(instan.index)), None)
-            user_animal.eat()
-        case '3' | 's':
-            Animal.list_instances()
-            user_animal_choice = input('Enter the number of the animal that needs to sleep:\n')
-            user_animal  = next((instan for instan in Animal.instances 
-                            if user_animal_choice == str(instan.index)), None)
-            user_animal.sleep()
-        case '4' | 'm':
-            Animal.list_instances()
-            user_animal_choice = input('Enter the number of the animal whos sound you want to hear:\n')
-            user_animal  = next((instan for instan in Animal.instances 
-                            if user_animal_choice == str(instan.index)), None)
-            user_animal.make_sound()
-        case '5' | 'p':
-            Animal.list_instances()
-            user_animal_choice = input("Enter the number of the animal that wants to play:\n")
-            user_animal  = next((instan for instan in Animal.instances 
-                            if user_animal_choice == str(instan.index)), None)
-            user_animal.play()
-        case '6' | 'la':
-            Animal.list_instances()   
-        case '7' | 'lv':
-            Visitor.list_instances()        
-        case '8' | 'esc' | 'exit' | 'e' | 'quit' | 'q':
-            exit()
-        case _:
-            print("I don't understand. Please choose something from the menu")
-    menu()
+        match user_menu_choice:
+            case '1' | 'a':
+                new_animal()
+            case '2' | 'f':
+                Animal.list_instances()
+                while True:
+                    user_animal_choice = input('Enter the number of the animal you want to feed:\n')
+                    if not user_animal_choice.isdigit():
+                        print("Invalid input. Please enter a valid number.")
+                        continue
+                    user_animal  = next((instan for instan in Animal.instances 
+                                    if user_animal_choice == str(instan.index)), None)
+                    if user_animal is None:
+                        print("No animal found with that number. Please enter a valid number.")
+                        continue
+                    user_animal.eat()
+                    break
+            case '3' | 's':
+                Animal.list_instances()
+                while True:
+                    user_animal_choice = input('Enter the number of the animal that needs to sleep:\n')
+                    if not user_animal_choice.isdigit():
+                        print("Invalid input. Please enter a valid number.")
+                        continue
+                    user_animal  = next((instan for instan in Animal.instances 
+                                    if user_animal_choice == str(instan.index)), None)
+                    if user_animal is None:
+                        print("No animal found with that number. Please enter a valid number.")
+                        continue
+                    user_animal.sleep()
+                    break
+            case '4' | 'm':
+                Animal.list_instances()
+                while True:
+                    user_animal_choice = input('Enter the number of the animal whos sound you want to hear:\n')
+                    if not user_animal_choice.isdigit():
+                        print("Invalid input. Please enter a valid number.")
+                        continue
+                    user_animal  = next((instan for instan in Animal.instances 
+                                    if user_animal_choice == str(instan.index)), None)
+                    if user_animal is None:
+                        print("No animal found with that number. Please enter a valid number.")
+                        continue
+                    user_animal.make_sound()
+                    break
+            case '5' | 'p':
+                Animal.list_instances()
+                while True:
+                    user_animal_choice = input("Enter the number of the animal that wants to play:\n")
+                    if not user_animal_choice.isdigit():
+                        print("Invalid input. Please enter a valid number.")
+                        continue
+                    user_animal  = next((instan for instan in Animal.instances 
+                                    if user_animal_choice == str(instan.index)), None)
+                    if user_animal is None:
+                        print("No animal found with that number. Please enter a valid number.")
+                        continue
+                    user_animal.play()
+                    break
+            case '6' | 'la':
+                Animal.list_instances()   
+            case '7' | 'lv':
+                Visitor.list_instances()        
+            case '8' | 'esc' | 'exit' | 'e' | 'quit' | 'q':
+                print('')
+                print('-'*50)
+                print("Thank's for your visit!\nHope you had a wonderful day!!!")
+                print('-'*50)
+                exit()
+            case _:
+                print("I don't understand. Please choose something from the menu")
+        menu()
 
 
 

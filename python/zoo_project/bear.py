@@ -9,6 +9,6 @@ class Bear(Carnivore):
         
     def make_sound(self):
         self.change_energy_level(self.sound_energy_decrease)
-        print(f'{self.name} the {self.type}:\n\nGrowl!\n')
+        print(f'\n{self.name} the {self.type}:\n\nGrowl!\n')
         
     

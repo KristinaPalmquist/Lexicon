@@ -1,0 +1,33 @@
+form {
+    background-color: #eee;
+    display: inline-block;
+}
+
+form div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eee;
+    margin: 10px 3px 3px 8px;
+}
+
+form div input, form div select {
+    border: #bababa solid 1px;
+}
+
+form div label {
+    width: 100px;
+}
+
+form div input, form div select {
+    width: 170px;
+    height: 20px;
+    margin: 0px 5px;
+    box-sizing: border-box;
+}
+
+form div input[type='submit'] {
+    width: 67px;
+    justify-self: center;
+    margin: 0 auto 10px;;
+}

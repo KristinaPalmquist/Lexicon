@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Rectangles</title>
+    <style>
+      .outside {
+        border: blue dotted 3px;
+        border-radius: 12px;
+        padding: 16px;
+        width: min-content;
+      }
+      .middle {
+        border: red dashed 1px;
+        border-radius: 8px;
+        padding: 16px;
+        width: min-content;
+      }
+      .inner {
+        border: green solid 2px;
+        border-radius: 4px;
+        padding: 0 16px;
+        width: 150px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outside">
+      <div class="middle">
+        <div class="inner">
+          <p>I am heavily packed &lt;DIV&gt;</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

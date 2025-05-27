@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+table {
+  width: 50vw;
+  margin: 12px;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+}
+.no {
+  position: relative;
+}
+.underline {
+  text-decoration: underline;
+  position: absolute;
+}
+
+.bold {
+  font-weight: bold;
+  text-align: center;
+}
+
+.result {
+  width: 400px;
+  text-align: right;
+  padding-right: 5px;
+}
+
+td {
+  padding-left: 5px;
+}

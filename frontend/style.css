@@ -1,0 +1,90 @@
+body {
+  box-sizing: border-box;
+  color: #181818;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+.container {
+  width: 80%;
+  margin: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: #12335f dotted 1px;
+  border-radius: 12px;
+}
+.card-1 {
+  background-color: #222;
+  color: #fff;
+  width: 30%;
+  border: 5px solid darkmagenta;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.headline {
+  font-size: 5vw;
+}
+.card-2 {
+  background-color: #222;
+  color: #fff;
+  width: 30%;
+  border: 5px solid #12335f;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-bottom: 4vh;
+  padding: 2vh;
+}
+.card-3 {
+  background-color: #fff;
+  color: #222;
+  width: 30%;
+  border: 5px dashed #12335f;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 4vh;
+  padding: 2vh;
+}
+
+.card-3 a:hover {
+  color: darkolivegreen;
+  font-size: larger;
+}
+
+.btn {
+  margin: 1rem 0 2rem 0;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0 0.5rem 1rem;
+  font-size: 2rem;
+}
+
+.btn-primary {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #b4b4b4;
+  color: #222;
+}
+
+.btn-primary:active {
+  background-color: limegreen;
+  color: #000;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #b4b4b4;
+  color: #222;
+}
+.btn-secondary:active {
+  font-size: 3rem;
+}

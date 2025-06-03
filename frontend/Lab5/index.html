@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Lab 5</title>
+  </head>
+  <body>
+    <h1>Frontend: Lab 5</h1>
+    <div class="task1">
+      <h2>1. Sum Numbers</h2>
+      <p>
+        Enter two numbers and click the button to see the
+        sum
+      </p>
+      <form>
+        <input type="text" id="num1" /><span> +</span><br />
+        <input type="text" id="num2" /><span> =</span><br />
+        <input type="text" id="sum" readonly />
+
+        <input
+          type="button"
+          value="Calc"
+          onClick="calc()"
+        />
+      </form>
+    </div>
+
+    <div class="task2">
+      <h2>2. Show more</h2>
+      <p>
+        Welcome to the "Show More Text Example"
+        <span
+          ><a href="#" id="more" onclick="showText()"
+            >Read More...</a
+          ></span
+        >
+        <span id="text" style="display: none"
+          >Welcome to the JavaScript and DOM.</span
+        >
+      </p>
+    </div>
+
+    <div class="task3">
+      <h2>3. Collect List Items</h2>
+      <ul id="items">
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+      </ul>
+      <textarea id="result" rows="4"></textarea><br />
+      <button onClick="extractText()">Extract Text</button>
+    </div>
+
+    <div class="task4">
+      <h2>4. Add and Delete</h2>
+      <h3>List of Items</h3>
+      <ul id="items4"></ul>
+      <input type="text" id="newText" />
+      <input
+        type="button"
+        onClick="addItem()"
+        value="Add"
+      />
+    </div>
+
+    <div class="task5">
+      <h2>5. Stopwatch</h2>
+
+      <div
+        id="time"
+        style="
+          border: 3px solid blue;
+          text-align: center;
+          font-size: 2em;
+          margin-bottom: 10px;
+          width: 200px;
+        "
+      >
+        00:00
+      </div>
+      <button id="startBtn">Start</button>
+      <button id="stopBtn" disabled="true">Stop</button>
+      <script>
+        window.onload = function () {
+          stopwatch();
+        };
+      </script>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -36,18 +36,22 @@ function addItem() {
   let newTextValue =
     document.getElementById("newText").value;
 
-  let listItem = document.createElement("li");
-  listItem.textContent = newTextValue + " ";
+  newTextValue =
+    newTextValue.charAt(0).toUpperCase() +
+    newTextValue.slice(1);
 
-  let deleteLink = document.createElement("a");
-  deleteLink.href = "#";
-  deleteLink.textContent = "Delete";
-  deleteLink.onclick = function (e) {
+  let listItem = document.createElement("li");
+  listItem.textContent = newTextValue + " - ";
+
+  let linkItem = document.createElement("a");
+  linkItem.href = "#";
+  linkItem.textContent = "Delete";
+  linkItem.onclick = function (e) {
     e.preventDefault();
     deleteItem(listItem);
   };
 
-  listItem.appendChild(deleteLink);
+  listItem.appendChild(linkItem);
   list.appendChild(listItem);
   document.getElementById("newText").value = "";
 

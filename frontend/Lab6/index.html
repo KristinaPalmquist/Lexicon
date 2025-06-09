@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Lab 6</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="display-1 py-3">Frontend - Lab 6</h1>
+      <div class="bg-light rounded p-3 mb-3">
+        <p class="m-3">
+          This is Lab 6 in the Frontend part of the "System
+          Developer Python and AI"-education at Lexicon.
+        </p>
+        <p class="m-3">
+          Fill in your details to create an account and get
+          started!
+        </p>
+      </div>
+
+      <form class="mt-5">
+        <div class="row">
+          <div class="col-sm-6 form-floating mb-3">
+            <input
+              type="text"
+              id="firstName"
+              class="form-control"
+              placeholder="First name"
+            />
+            <label for="firstName" class="form-label ms-2"
+              >First name</label
+            >
+          </div>
+
+          <div class="col-sm-6 form-floating mb-3">
+            <input
+              type="text"
+              id="lastName"
+              class="form-control"
+              placeholder="Last name"
+            />
+            <label for="lastName" class="form-label ms-2"
+              >Last name</label
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8 form-floating mb-3">
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Email adress"
+            />
+            <label for="email" class="form-label ms-2"
+              >Email</label
+            >
+          </div>
+
+          <div class="col-sm-4 form-floating mb-3">
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="Password"
+            />
+            <label for="password" class="form-label ms-2"
+              >Password</label
+            >
+          </div>
+        </div>
+
+        <div class="text-center">
+          <small class="fw-lighter fst-italic">
+            Please trust that we won't share your
+            information with anyone!
+          </small>
+        </div>
+
+        <div class="col mt-5 d-flex justify-content-evenly">
+          <input
+            type="button"
+            value="Cancel"
+            class="btn btn-lg btn-outline-danger"
+          />
+          <input
+            type="button"
+            value="Submit"
+            class="btn btn-lg btn-success"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

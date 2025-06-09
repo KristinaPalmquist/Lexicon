@@ -1,0 +1,90 @@
+@import url("./bootstrap-overrides.css");
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 56px;
+  /* padding-bottom: 200px; */
+  color: var(--bs-body-color);
+  background: var(--bs-body-bg);
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+}
+
+main {
+  flex-grow: 1;
+}
+.main-header {
+  text-align: center;
+}
+.main-header h1 {
+  font-size: 14vw;
+}
+.main-header h2 {
+  font-size: 5vw;
+}
+
+/* POLAROID */
+.polaroid {
+  display: inline-block;
+  background: #fff;
+  margin: 55px 75px 30px;
+  padding: 15px 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  z-index: 0;
+  position: relative;
+}
+
+.polaroid-link {
+  text-decoration: none;
+}
+
+.polaroid-link:after {
+  color: #333;
+  text-decoration: none;
+  font-size: 25px;
+  content: attr(title);
+  position: relative;
+  top: 15px;
+}
+
+.polaroid-img {
+  display: block;
+  width: 250px;
+}
+.polaroid:hover {
+  -webkit-transform: scale(1.08);
+  -moz-transform: scale(1.08);
+  transform: scale(1.08);
+  z-index: 10;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+#welcome .polaroid {
+  margin: 5px 5px 5px;
+  transform: rotate(3deg);
+}
+
+/* #welcome-img {
+  aspect-ratio: 4 / 3;
+  min-height: 150px;
+  max-width: 50%;
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+  background: url("../img/image.png") center center
+    no-repeat;
+  background-size: cover;
+} */
+
+/* INSPIRATION */
+#inspiration ul {
+  list-style: none;
+}

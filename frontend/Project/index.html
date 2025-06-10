@@ -13,16 +13,24 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <header>
       <nav
-        class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-secondary"
+        class="navbar navbar-expand-lg my-navbar fixed-top py-4"
       >
         <div class="container">
-          <a class="navbar-brand" href="#">Portfolio</a>
+          <a
+            class="navbar-brand text-uppercase fw-bold"
+            href="#"
+            >Portfolio</a
+          >
           <button
             class="navbar-toggler"
             type="button"
@@ -38,7 +46,7 @@
             class="collapse navbar-collapse"
             id="navbarNavAltMarkup"
           >
-            <div class="navbar-nav">
+            <div class="navbar-nav ms-auto">
               <a
                 class="nav-link active"
                 aria-current="page"
@@ -53,7 +61,7 @@
                 >Contact</a
               >
               <a class="nav-link" href="test.html">Test</a>
-              <a class="nav-link" href="inspiration.html"
+              <a class="nav-link" href="#inspiration"
                 >Inspiration</a
               >
             </div>
@@ -70,27 +78,11 @@
         </h2>
       </div>
 
-      <div id="welcome" class="bg-tertiary py-5">
+      <section id="welcome" class="bg-tertiary py-5">
         <div class="container py-3">
-          <div class="row">
+          <div class="row align-items-center">
             <div
-              class="col-sm-6 d-flex flex-column align-items-center justify-content-center"
-            >
-              <p>
-                Welcome to my portfolio site! This page is
-                created for an assignment in the frontend
-                part of the "System Developer Python and
-                AI"-education at Lexicon IT Proffs.
-              </p>
-              <a
-                href="#projects"
-                role="button"
-                class="btn btn-primary"
-                >View my projects</a
-              >
-            </div>
-            <div
-              class="col-sm-6 d-flex justify-content-center"
+              class="col-12 col-md-6 order-md-2 d-flex justify-content-center"
             >
               <div class="polaroid">
                 <a
@@ -108,233 +100,469 @@
                 </a>
               </div>
             </div>
+
+            <div class="col-12 col-md-6 order-md-1">
+              <div
+                class="d-flex align-items-stretch py-4 mt-4 mb-0 mb-md-4 accent-wrap"
+              >
+                <div class="accent-line"></div>
+                <div
+                  class="d-flex flex-column align-items-center"
+                >
+                  <p class="text-center mt-4">
+                    Welcome to my portfolio site! This page
+                    is created for an assignment in the
+                    frontend part of the "System Developer
+                    Python and AI"-education at Lexicon IT
+                    Proffs.
+                  </p>
+                  <a
+                    href="#projects"
+                    role="button"
+                    class="btn btn-primary btn-lg my-4"
+                    >View my projects</a
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </header>
 
     <main>
-      <div class="container">
-        <section id="about" class="py-5">
-          <article class="">
-            <h2 class="display-2 py-3">About me</h2>
-            <p>
-              I am a system developer living in Stockholm.
-              I've worked in finance for about 20 years and
-              then decided to change direction. I choose to
-              study a 2 year 'JavaScript Developer'
-              education at IT-Högskolan. During that time I
-              finally got my bachelors degree in Business
-              Administration from Stockholm University and
-              studied university courses in IT. I'm
-              currently doing a 6-month 'System Developer
-              Python and AI' education at Lexicon AB, that
-              will be followed by a 12-week internship.
-            </p>
-            <p>
-              I love programming both backend and frontend,
-              for instance getting into the logic of a
-              database or implementing a design.
-            </p>
-          </article>
-
-          <h2 class="display-2 py-3">About this project</h2>
-
-          <div>
-            <ol>
-              <li>
-                A navigation menu that includes links to
-                different sections of the page.
-              </li>
-              <li>
-                A header section with a welcome message and
-                a professional photo of the student.
-              </li>
-              <li>
-                An "About Me" section with a brief
-                biography.
-              </li>
-              <li>
-                A projects section where at least three
-                projects are displayed with images,
-                descriptions, and links to live demos or
-                code repositories.
-              </li>
-              <li>
-                A footer with contact information and links
-                to social media profiles.
-              </li>
-            </ol>
+      <section id="about">
+        <article class="container">
+          <h2 class="display-2">About me</h2>
+          <div
+            class="d-flex align-items-stretch py-4 mb-4 accent-wrap"
+          >
+            <div class="accent-line bg-warning"></div>
+            <div>
+              <p>
+                I'm a system developer living in Stockholm.
+                I've worked in finance for about 20 years
+                and then decided to change direction. I
+                choose to study a 2 year 'JavaScript
+                Developer' education at IT-Högskolan. During
+                that time I finally got my bachelors degree
+                in Business Administration from Stockholm
+                University and studied university courses in
+                IT. I'm currently doing a 6-month 'System
+                Developer Python and AI' education at
+                Lexicon AB, that will be followed by a
+                12-week internship.
+              </p>
+              <p>
+                I love programming both backend and
+                frontend, for instance getting into the
+                logic of a database or implementing a
+                design.
+              </p>
+            </div>
           </div>
-        </section>
+        </article>
 
-        <section id="projects" class="py-5">
+        <!-- <article class="container">
+          <h2 class="display-2">About this project</h2>
+          <div
+            class="d-flex align-items-stretch py-4 mb-4 accent-wrap"
+          >
+            <div class="accent-line bg-info"></div>
+            <div>
+              <div>
+                <ol>
+                  <li>
+                    A navigation menu that includes links to
+                    different sections of the page.
+                  </li>
+                  <li>
+                    A header section with a welcome message
+                    and a professional photo of the student.
+                  </li>
+                  <li>
+                    An "About Me" section with a brief
+                    biography.
+                  </li>
+                  <li>
+                    A projects section where at least three
+                    projects are displayed with images,
+                    descriptions, and links to live demos or
+                    code repositories.
+                  </li>
+                  <li>
+                    A footer with contact information and
+                    links to social media profiles.
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </article> -->
+      </section>
+
+      <section id="projects">
+        <div class="container">
           <h2 class="display-2">Projects</h2>
           <p>
             A projects section where at least three projects
             are displayed with images, descriptions, and
             links to live demos or code repositories.
           </p>
-          <article id="project1" class="row">
-            <div class="polaroid col-sm-6">
-              <a
-                href="#"
-                title="project"
-                class="polaroid-link"
-              >
-                <img
-                  src="./img/image.png"
+        </div>
+
+        <div class="container">
+          <article
+            id="project-1"
+            class="row align-items-center py-5"
+          >
+            <div
+              class="col-12 col-md-6 order-1 order-md-1 d-flex justify-content-center"
+            >
+              <div class="polaroid">
+                <a
+                  href="#"
                   title="project"
-                  alt="me"
-                  height="250"
-                  class="polaroid-img"
-                />
-              </a>
+                  class="polaroid-link"
+                >
+                  <img
+                    src="./img/sketch.jpg"
+                    title="project"
+                    alt="me"
+                    height="250"
+                    class="polaroid-img"
+                  />
+                </a>
+              </div>
             </div>
-            <div class="col-sm-6 d-flex flex-column align-items-center justify-content-center">
-              <h3>Project 1</h3>
-              <p>
-                A projects section where at least three
-                projects are displayed with images,
-                descriptions, and links to live demos or
-                code repositories.
-              </p>
-              <a href="#" class="btn btn-warning btn-lg"
-                >GitHub repo</a
+
+            <div class="col-12 col-md-6 order-2 order-md-2">
+              <div
+                class="d-flex align-items-stretch py-4 mb-4 accent-wrap"
               >
+                <div class="accent-line"></div>
+                <div
+                  class="d-flex flex-column align-items-center"
+                >
+                  <h3 class="display-5">Project 1</h3>
+                  <p class="lead">
+                    A projects section where at least three
+                    projects are displayed with images,
+                    descriptions, and links to live demos or
+                    code repositories.
+                  </p>
+                  <div class="mb-4">
+                    <a
+                      href="#project-1-info"
+                      role="button"
+                      class="btn btn-outline-warning m-3 mt-md-5"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#project-1-info"
+                      aria-expanded="false"
+                      aria-controls="project-1-info"
+                      ><i class="bi bi-chevron-right"></i>
+                      Read more</a
+                    ><a
+                      href="#"
+                      role="button"
+                      class="btn btn-warning m-3 mt-md-5"
+                      ><i class="bi bi-github"></i> GitHub
+                      repo</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-12 collapse order-3"
+              id="project-1-info"
+            >
+              <p>
+                Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Corrupti, repellendus.
+                Veritatis obcaecati repudiandae non fuga
+                dicta et consectetur deleniti ut est
+                repellendus, officia optio sunt eveniet?
+                Repudiandae ea nulla praesentium iste fuga a
+                inventore eaque consequuntur dicta
+                reprehenderit quas voluptatum maxime
+                consectetur vero alias unde sed enim, fugiat
+                assumenda iure?
+              </p>
             </div>
           </article>
+        </div>
 
-          <article id="project2" class="row">
-            <div class="col-sm-6 d-flex flex-column align-items-center justify-content-center">
-              <h3>Project 2</h3>
-              <p>
-                A projects section where at least three
-                projects are displayed with images,
-                descriptions, and links to live demos or
-                code repositories.
-              </p>
-              <a href="#" class="btn btn-danger btn-lg"
-                >GitHub repo</a
+        <div class="container">
+          <article
+            id="project-2"
+            class="row align-items-center py-5"
+          >
+            <div class="col-12 col-md-6 order-2 order-md-1">
+              <div
+                class="d-flex align-items-stretch py-4 mb-4 accent-wrap"
               >
+                <div class="accent-line"></div>
+                <div
+                  class="d-flex flex-column align-items-center"
+                >
+                  <h3 class="display-5">Project 2</h3>
+                  <p class="lead">
+                    A projects section where at least three
+                    projects are displayed with images,
+                    descriptions, and links to live demos or
+                    code repositories.
+                  </p>
+                  <div class="mb-4">
+                    <a
+                      role="button"
+                      class="btn btn-outline-danger m-3 mt-md-5"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#project-2-info"
+                      aria-expanded="false"
+                      aria-controls="project-2-info"
+                      ><i class="bi bi-chevron-right"></i>
+                      Read more</a
+                    >
+                    <a
+                      href="#"
+                      role="button"
+                      class="btn btn-danger m-3 mt-md-5"
+                      ><i class="bi bi-github"></i> GitHub
+                      repo</a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="polaroid col-sm-6">
-              <a
-                href="#"
-                title="project"
-                class="polaroid-link"
-              >
-                <img
-                  src="./img/image.png"
+            <div
+              class="col-12 col-md-6 order-1 order-md-2 d-flex justify-content-center"
+            >
+              <div class="polaroid">
+                <a
+                  href="#"
                   title="project"
-                  alt="me"
-                  height="250"
-                  class="polaroid-img"
-                />
-              </a>
+                  class="polaroid-link"
+                >
+                  <img
+                    src="./img/code.jpg"
+                    title="project"
+                    alt="me"
+                    height="250"
+                    class="polaroid-img"
+                  />
+                </a>
+              </div>
+            </div>
+            <div
+              class="col-12 collapse order-3"
+              id="project-2-info"
+            >
+              <p>
+                Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Corrupti, repellendus.
+                Veritatis obcaecati repudiandae non fuga
+                dicta et consectetur deleniti ut est
+                repellendus, officia optio sunt eveniet?
+                Repudiandae ea nulla praesentium iste fuga a
+                inventore eaque consequuntur dicta
+                reprehenderit quas voluptatum maxime
+                consectetur vero alias unde sed enim, fugiat
+                assumenda iure?
+              </p>
             </div>
           </article>
+        </div>
 
-          <article id="project3" class="row">
-            <div class="polaroid col-sm-6">
-              <a
-                href="#"
-                title="project"
-                class="polaroid-link"
-              >
-                <img
-                  src="./img/image.png"
+        <div class="container">
+          <article
+            id="project-3"
+            class="row align-items-center py-5"
+          >
+            <div
+              class="col-12 col-md-6 order-1 order-md-1 d-flex justify-content-center"
+            >
+              <div class="polaroid">
+                <a
+                  href="#"
                   title="project"
-                  alt="me"
-                  height="250"
-                  class="polaroid-img"
-                />
-              </a>
+                  class="polaroid-link"
+                >
+                  <img
+                    src="./img/chat.jpg"
+                    title="project"
+                    alt="me"
+                    height="250"
+                    class="polaroid-img"
+                  />
+                </a>
+              </div>
             </div>
-            <div class="col-sm-6 d-flex flex-column align-items-center justify-content-center">
-              <h3>Project 3</h3>
-              <p>
-                A projects section where at least three
-                projects are displayed with images,
-                descriptions, and links to live demos or
-                code repositories.
-              </p>
-              <a href="#" class="btn btn-info btn-lg"
-                >GitHub repo</a
+            <div class="col-12 col-md-6 order-2 order-md-2">
+              <div
+                class="d-flex align-items-stretch py-4 mb-4 accent-wrap"
               >
+                <div class="accent-line"></div>
+                <div
+                  class="d-flex flex-column align-items-center"
+                >
+                  <h3 class="display-5">Project 3</h3>
+                  <p>
+                    A projects section where at least three
+                    projects are displayed with images,
+                    descriptions, and links to live demos or
+                    code repositories.
+                  </p>
+
+                  <div class="mb-4">
+                    <a
+                      role="button"
+                      class="btn btn-outline-info m-3 mt-md-5"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#project-3-info"
+                      aria-expanded="false"
+                      aria-controls="project-3-info"
+                      ><i class="bi bi-chevron-right"></i>
+                      Read more</a
+                    >
+                    <a
+                      href="#"
+                      role="button"
+                      class="btn btn-info m-3 mt-md-5"
+                      ><i class="bi bi-github"></i> GitHub
+                      repo</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-12 collapse order-3"
+              id="project-3-info"
+            >
+              <p>
+                Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Corrupti, repellendus.
+                Veritatis obcaecati repudiandae non fuga
+                dicta et consectetur deleniti ut est
+                repellendus, officia optio sunt eveniet?
+                Repudiandae ea nulla praesentium iste fuga a
+                inventore eaque consequuntur dicta
+                reprehenderit quas voluptatum maxime
+                consectetur vero alias unde sed enim, fugiat
+                assumenda iure?
+              </p>
             </div>
           </article>
-        </section>
+        </div>
+      </section>
 
-        <section id="contact" class="py-5">
+      <section id="contact">
+        <div class="container">
           <h2 class="display-2">Contact</h2>
-          <h3 class="text-muted display-5">
-            Please send me a message if you want to get in
-            touch!
-          </h3>
-
-          <p class="alert alert-warning">
-            You might have suggestions for improvement or
-            want to recommend a job that you think I would
-            be a good fit for. Or perhaps you have
-            suggestions for companies that might be able to
-            offer an internship in Python and/or AI.
-          </p>
-
+        </div>
+        <div class="bg-tertiary">
+          <div class="container">
+            <div
+              class="d-flex align-items-stretch py-4 mb-4 accent-wrap"
+            >
+              <div class="accent-line bg-success"></div>
+              <div>
+                <h6 class="small-header">
+                  Please send me a message if you want to
+                  get in touch!
+                </h6>
+                <p>
+                  You might have suggestions for improvement
+                  or want to recommend a job that you think
+                  I would be a good fit for. Or perhaps you
+                  have suggestions for companies that might
+                  be able to offer an internship in Python
+                  and/or AI.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
           <form
             action="mailto:kristina.palmquist@gmail.com"
             method="post"
             enctype="multipart/form-data"
             name="emailForm"
+            class="needs-validation"
           >
             <div class="row">
-              <div class="form-floating mb-3 col-md-6">
+              <div class="form-floating mb-4 col-md-6">
                 <input
                   type="text"
                   class="form-control"
                   id="firstName"
                   placeholder="active"
+                  value=""
+                  required
                 />
-                <label for="firstName" class="form-label"
+                <label
+                  for="firstName"
+                  class="form-label ms-2"
                   >First name</label
                 >
+                <div class="invalid-feedback">
+                  First name is required
+                </div>
               </div>
-              <div class="form-floating mb-3 col-md-6">
+              <div class="form-floating mb-4 col-md-6">
                 <input
                   type="text"
                   class="form-control"
                   id="lastName"
                   placeholder="active"
+                  value=""
+                  required
                 />
-                <label for="lastName" class="form-label"
+                <label
+                  for="lastName"
+                  class="form-label ms-2"
                   >Last name</label
                 >
+                <div class="invalid-feedback">
+                  Last name is required
+                </div>
+              </div>
+
+              <div class="form-floating mb-4 col-md-12">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="active"
+                  required
+                />
+                <label for="email" class="form-label ms-2"
+                  >Email</label
+                >
+                <div class="invalid-feedback">
+                  Email is required
+                </div>
+              </div>
+              <div class="form-floating mb-4 col-md-12">
+                <textarea
+                  style="height: 150px"
+                  id="message"
+                  class="form-control"
+                  placeholder="Message"
+                  required
+                ></textarea>
+                <label for="message" class="form-label ms-2"
+                  >Message</label
+                >
+                <div class="invalid-feedback">
+                  Message is required
+                </div>
               </div>
             </div>
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                placeholder="active"
-              />
-              <label for="email" class="form-label"
-                >Email</label
-              >
-            </div>
-            <div class="form-floating mb-3">
-              <textarea
-                style="height: 150px"
-                id="message"
-                class="form-control"
-                placeholder="Message"
-              ></textarea>
-              <label for="message" class="form-label"
-                >Message</label
-              >
-            </div>
             <div
-              class="mb-3 d-flex justify-content-evenly g-5"
+              class="mt-5 mb-3 d-flex justify-content-evenly g-5"
             >
               <button
                 type="reset"
@@ -344,16 +572,35 @@
               </button>
               <button
                 type="submit"
-                class="btn btn-primary btn-lg"
+                class="btn btn-success btn-lg"
               >
                 Send message
               </button>
             </div>
           </form>
-        </section>
+        </div>
+      </section>
 
-        <section id="test-color-scheme" class="py-5">
+      <!-- <section id="test-color-scheme">
+        <div class="container">
           <h2 class="display-2">Test color scheme</h2>
+          <div class="d-flex align-items-center mb-4">
+            <div
+              style="
+                width: 8px;
+                height: 48px;
+                background: var(--bs-primary);
+                margin-right: 24px;
+                border-radius: 4px;
+              "
+            ></div>
+            <h2
+              class="display-2 fw-bold text-uppercase m-0"
+              style="letter-spacing: 0.1em"
+            >
+              Test header
+            </h2>
+          </div>
           <a href="#">Click to see</a>
           <a href="#">Click to see</a>
           <a href="#">Click to see</a>
@@ -369,64 +616,80 @@
           <button class="btn btn-secondary">
             Secondary
           </button>
-        </section>
+        </div>
+      </section> -->
 
-        <section id="inspiration" class="py-5">
+      <section id="inspiration">
+        <div class="container">
           <h2 class="display-2">Inspiration</h2>
-          <p>
-            Here are some sites/posts that provided
-            inspiration for this site:
-          </p>
-          <ul class="row">
-            <li class="col">
-              <a
-                href="w3docs.com/snippets/css/how-to-create-polaroid-image-with-css.html"
-                class="primary-link"
-                >Polaroid photo effect</a
-              >
-            </li>
-            <li class="col">
-              <a href="#" class="primary-link">Another</a>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </main>
-
-    <footer class="bg-secondary">
-      <div class="container py-3">
-        <div class="row g-5">
-          <div class="col-6">
-            <p class="text-end fs-5">
-              Click to
-              <a
-                href="mailto:kristina.palmquist@gmail.com"
-                target="_blank"
-                class="primary-link"
-                >email</a
-              >
-            </p>
-            <p class="text-end fs-5">
-              Click to
-              <a
-                href="tel:+46739500790"
-                class="primary-link"
-                >call</a
-              >
-            </p>
-          </div>
-          <div class="col-6">
-            <p class="fs-5">
-              Link to
-              <a href="" class="primary-link">LinkedIn</a>
-            </p>
-            <p class="fs-5">
-              Link to
-              <a href="" class="primary-link">GitHub</a>
-            </p>
+        </div>
+        <div class="bg-tertiary pb-3">
+          <div class="container">
+            <div
+              class="d-flex align-items-stretch py-5 accent-wrap"
+            >
+              <div class="accent-line bg-danger"></div>
+              <div>
+                <h6 class="small-header">
+                  Here are some sites/posts that provided
+                  inspiration for this site:
+                </h6>
+                <div class="inspiration-links">
+                  <a
+                    href="http://w3docs.com/snippets/css/how-to-create-polaroid-image-with-css.html"
+                    target="_blank"
+                    class="my-link"
+                    >Polaroid photo effect</a
+                  >
+                  <a href="#" class="my-link">Another</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <p class="text-center">
+      </section>
+    </main>
+
+    <footer class="my-footer bg-secondary">
+      <div class="container py-4">
+        <div class="row g-5 align-items-center">
+          <div
+            class="col-12 col-md-6 text-md-end mb-3 mb-md-0"
+          >
+            <span class="footer-label">Contact:</span>
+            <a
+              href="mailto:kristina.palmquist@gmail.com"
+              target="_blank"
+              class="footer-link"
+              ><i class="bi bi-envelope"></i> Email</a
+            >
+            <span class="mx-2">|</span>
+
+            <a href="tel:+46739500790" class="footer-link">
+              <i class="bi bi-telephone"></i> Call</a
+            >
+          </div>
+          <div class="col-12 col-md-6 text-md-start">
+            <span class="footer-label">Links:</span>
+
+            <a
+              href="https://www.linkedin.com/in/kristinapalmquist/"
+              class="footer-link"
+              ><i class="bi bi-linkedin"></i> LinkedIn</a
+            >
+            <span class="mx-2">|</span>
+            <a
+              href="https://github.com/KristinaPalmquist"
+              class="footer-link"
+              ><i class="bi bi-github"></i> GitHub</a
+            >
+          </div>
+        </div>
+        <hr class="my-3" />
+        <p
+          class="text-center small mb-0"
+          style="letter-spacing: 0.1em"
+        >
           &copy; Copyright Kristina Palmquist 2025
         </p>
       </div>

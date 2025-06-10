@@ -24,11 +24,13 @@
   <body>
     <header>
       <nav
-        class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-secondary"
+        class="navbar navbar-expand-lg my-navbar fixed-top py-4"
       >
         <div class="container">
-          <a class="navbar-brand" href="#"
-            >Kristina Palmquist</a
+          <a
+            class="navbar-brand text-uppercase fw-bold"
+            href="#"
+            >Portfolio</a
           >
           <button
             class="navbar-toggler"
@@ -45,21 +47,26 @@
             class="collapse navbar-collapse"
             id="navbarNavAltMarkup"
           >
-            <div class="navbar-nav">
+            <div class="navbar-nav ms-auto">
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="#"
+                href="index.html"
                 >Home</a
               >
               <a class="nav-link" href="#about">About</a>
-              <a class="nav-link" href="#projects"
+              <a class="nav-link" href="index.html#projects"
                 >Projects</a
               >
-              <a class="nav-link" href="#contact"
+              <a class="nav-link" href="index.html#contact"
                 >Contact</a
               >
               <a class="nav-link" href="test.html">Test</a>
+              <a
+                class="nav-link"
+                href="index.html#inspiration"
+                >Inspiration</a
+              >
             </div>
           </div>
         </div>
@@ -70,7 +77,7 @@
       <p>
         w3docs.com/snippets/css/how-to-create-polaroid-image-with-css.html
       </p>
-      <div class="polaroid-look">
+      <div class="polaroid">
         <a href="#" title="project" class="polaroid-link">
           <img
             src="./img/image.png"
@@ -81,6 +88,112 @@
           />
         </a>
       </div>
+
+      <section id="contact">
+        <div class="container">
+          <h2 class="display-2">Contact</h2>
+        </div>
+        <div class="bg-tertiary">
+          <div class="container">
+            <div
+              class="d-flex align-items-stretch py-4 mb-4 accent-wrap"
+            >
+              <div class="accent-line"></div>
+              <div>
+                <h6>
+                  Please send me a message if you want to
+                  get in touch!
+                </h6>
+                <p>
+                  You might have suggestions for improvement
+                  or want to recommend a job that you think
+                  I would be a good fit for. Or perhaps you
+                  have suggestions for companies that might
+                  be able to offer an internship in Python
+                  and/or AI.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <form
+            action="mailto:kristina.palmquist@gmail.com"
+            method="post"
+            enctype="multipart/form-data"
+            name="emailForm"
+          >
+            <div class="row">
+              <div class="form-floating mb-4 col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="active"
+                />
+                <label
+                  for="firstName"
+                  class="form-label ms-2"
+                  >First name</label
+                >
+              </div>
+              <div class="form-floating mb-4 col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="active"
+                />
+                <label
+                  for="lastName"
+                  class="form-label ms-2"
+                  >Last name</label
+                >
+              </div>
+
+              <div class="form-floating mb-4 col-md-12">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="active"
+                />
+                <label for="email" class="form-label ms-2"
+                  >Email</label
+                >
+              </div>
+              <div class="form-floating mb-4 col-md-12">
+                <textarea
+                  style="height: 150px"
+                  id="message"
+                  class="form-control"
+                  placeholder="Message"
+                ></textarea>
+                <label for="message" class="form-label ms-2"
+                  >Message</label
+                >
+              </div>
+            </div>
+            <div
+              class="mt-5 mb-3 d-flex justify-content-evenly g-5"
+            >
+              <button
+                type="reset"
+                class="btn btn-secondary btn-lg"
+              >
+                Empty content
+              </button>
+              <button
+                type="submit"
+                class="btn btn-success btn-lg"
+              >
+                Send message
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer class="bg-secondary">

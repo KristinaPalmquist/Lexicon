@@ -488,14 +488,15 @@
           <form
             action="mailto:kristina.palmquist@gmail.com"
             method="post"
-            enctype="multipart/form-data"
             name="emailForm"
+            enctype="multipart/form-data"
             class="needs-validation"
           >
             <div class="row">
               <div class="form-floating mb-4 col-md-6">
                 <input
                   type="text"
+                  name="firstName"
                   class="form-control"
                   id="firstName"
                   placeholder="active"
@@ -514,6 +515,7 @@
               <div class="form-floating mb-4 col-md-6">
                 <input
                   type="text"
+                  name="lastName"
                   class="form-control"
                   id="lastName"
                   placeholder="active"
@@ -533,6 +535,7 @@
               <div class="form-floating mb-4 col-md-12">
                 <input
                   type="email"
+                  name="email"
                   class="form-control"
                   id="email"
                   placeholder="active"
@@ -549,6 +552,7 @@
                 <textarea
                   style="height: 150px"
                   id="message"
+                  name="message"
                   class="form-control"
                   placeholder="Message"
                   required

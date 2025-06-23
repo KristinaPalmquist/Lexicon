@@ -1,0 +1,42 @@
+
+MongoDB Lab 2: Student Management System
+This time, you'll work with a more complex dataset involving students, teachers, course history, and grades. Your goal is to deepen your understanding of queries, updates, and aggregation pipelines.
+Scenario:
+You're working on an advanced version of a Student Management System.
+In addition to students and their current courses, you now need to manage:
+- Teachers
+- Grade history for students (e.g., how a student's grade has changed over time)
+You will be working with two collections:
+- students - teachers
+Part 1 - Create the Data
+1. Create a teachers collection with documents like this:
+{
+"name": "Anna Svensson", "department": "Mathematics", "courses": ["Math", "Physics"] }
+
+- Create at least 3 different teachers with different departments and courses.
+2. Add a grade history to your existing students. Here's an example:
+"grade_history": [
+{
+"course": "Math", "grades": ["C", "B", "A"] },
+{
+"course": "History", "grades": ["B", "B"] }
+]
+- Add at least one course with grade history to each student.
+Part 2 - Queries & Updates
+3. Find all students who have taken the course "Physics" and received an "A" (in either courses or grade_history).
+4. Find all teachers who teach a course where at least one student has an "A".
+5. Add a new course to one of the students (e.g., "Programming", grade: "B") - Make sure to update both courses and grade_history.
+
+6. Delete all students who are not enrolled in any course (i.e., courses array is empty or missing).
+Bonus Challenge - Aggregation Mastery
+These tasks will require you to use aggregation pipelines.
+1. Create a report that shows:
+- Each course name
+- How many students are enrolled in that course
+- The average grade for that course
+(Tip: Convert grades to numbers, e.g., A = 5, B = 4, C = 3...)
+2. List each teacher with the number of unique students enrolled in their courses.
+Tips:
+- Use $elemMatch, $unwind, $group, $lookup, and $match where needed.
+- You may use grade conversion inside your pipeline using $switch or $map.
+Don't forget that MongoDB works best when you think document-first, not SQL-style.

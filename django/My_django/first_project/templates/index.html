@@ -1,0 +1,20 @@
+{% load static %}
+
+<html>
+  <head>
+    <title>Django</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/style.css'%}"
+    />
+  </head>
+  <body>
+    <h1>Hello this is the image</h1>
+    {{ insert_me}}
+    <br /><br /><br />
+    <img
+      src="{% static 'images/django.jpeg' %}"
+      alt="oh no, didn't load"
+    />
+  </body>
+</html>

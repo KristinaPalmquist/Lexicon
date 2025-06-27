@@ -1,0 +1,72 @@
+{% load static %}
+
+<html>
+  <head>
+    <title>Django</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/style.css'%}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome!</h1>
+      <h2>Here are your access records</h2>
+      <div class="text">
+        {% if access_records %}
+        <table>
+          <thead>
+            <th>Site Name</th>
+            <th>Date Accessed</th>
+          </thead>
+          {% for acc in access_records %}
+          <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% else %}
+        <p>No access records found</p>
+        {% endif %}
+      </div>
+      {% comment %}
+      <div class="text">
+        <p>
+          Hello and welcome to the best site in the history
+          of Django.
+        </p>
+        <p>
+          Django is a free and open-source, Python-based web
+          framework that runs on a web server. It follows
+          the model–template–views (MTV) architectural
+          pattern. It is maintained by the Django Software
+          Foundation (DSF), an independent organization
+          established in the US as a 501(c)(3) non-profit.
+        </p>
+        <p>
+          Django's primary goal is to ease the creation of
+          complex, database-driven websites. The framework
+          emphasizes reusability and "pluggability" of
+          components, less code, low coupling, rapid
+          development, and the principle of don't repeat
+          yourself.[8] Python is used throughout, even for
+          settings, files, and data models. Django also
+          provides an optional administrative create, read,
+          update and delete interface that is generated
+          dynamically through introspection and configured
+          via admin models.
+        </p>
+      </div>
+      {% endcomment %}
+      <div class="buttons">
+        <a href="/help/">
+          <button type="button">Help</button></a
+        >
+        <a href="/admin/">
+          <button type="button">Admin</button></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

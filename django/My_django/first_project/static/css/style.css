@@ -1,4 +1,5 @@
 body {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +11,7 @@ div.container {
   width: clamp(600px, 50vw, 1200px);
   padding: 5vw 4vw 6vw;
   border-radius: 1.5rem;
-  background-color: #fff;
+  background-color: #fbd4da;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +20,8 @@ div.container {
 
 div.text {
   border-top: 2px solid hotpink;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 div.buttons {
   display: flex;
@@ -49,4 +52,7 @@ table,
 th,
 td {
   border: 1px solid black !important;
+  font-size: small;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }

@@ -132,3 +132,8 @@ STATICFILES_DIRS = [STATIC_DIR]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# set default port to other than 8000
+from django.core.management.commands.runserver import Command as runserver
+runserver.default_port = "8070"

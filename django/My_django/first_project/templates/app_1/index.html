@@ -1,0 +1,15 @@
+<!-- prettier-ignore -->
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title%}Django{%endblock%} 
+{% block content %}
+
+<h1>Hello this is the image</h1>
+{{ insert_me}}
+<br /><br /><br />
+<img
+  src="{% static 'images/django.jpeg' %}"
+  alt="oh no, didn't load"
+  width="200px"
+/>
+{% endblock %}

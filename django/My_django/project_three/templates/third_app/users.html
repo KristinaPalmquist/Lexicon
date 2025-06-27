@@ -1,0 +1,28 @@
+<!-- prettier-ignore -->
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}Third App{%endblock%} 
+{% block content %}
+
+<h2>Welcome! Here are the users</h2>
+<div class="text">
+  {% if users %}
+  <table>
+    <thead>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+    </thead>
+    {% for user in users %}
+    <tr>
+      <td>{{ user.firstname }}</td>
+      <td>{{ user.lastname }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>No users found</p>
+  {% endif %}
+</div>
+{%endblock%}

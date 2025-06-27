@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from third_app.models import User
+from app_3.models import User
 
 # Create your views here.
 
-def index(request):
+def users(request):
     userlist = User.objects.order_by('lastname')
     my_dict = {'users': userlist}
-    return render(request, 'third_app/index.html', context=my_dict)
+    return render(request, 'app_3/users.html', context=my_dict)

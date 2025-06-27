@@ -7,15 +7,19 @@
     <title>{% block title %} {% endblock %}</title>
     <link
       rel="stylesheet"
-      href="{% static 'style.css' %}"
+      href="{% static 'css/style.css' %}"
     />
   </head>
   <body>
     <div class="container">
       {% block content %} {% endblock %}
       <div class="buttons">
-        <a href="/help/">
+        <a href="/"> <button type="button">Home</button></a>
+        <a href="/second/help/">
           <button type="button">Help</button></a
+        >
+        <a href="/third/users/">
+          <button type="button">Users</button></a
         >
         <a href="/admin/">
           <button type="button">Admin</button></a

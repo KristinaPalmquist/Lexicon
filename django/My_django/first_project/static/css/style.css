@@ -24,7 +24,10 @@ div.text {
   padding-bottom: 0.75rem;
 }
 div.buttons {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 h1 {
   text-align: center;
@@ -32,10 +35,10 @@ h1 {
 }
 
 button {
-  padding: 1rem 1.5rem;
-  margin: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
   border-radius: 1rem;
-  font-size: large;
+  font-size: medium;
   text-transform: uppercase;
   background-color: yellow;
   border: 1px solid #f8f002;
@@ -55,4 +58,8 @@ td {
   font-size: small;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+form {
+  width: 100%;
 }

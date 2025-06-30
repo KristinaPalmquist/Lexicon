@@ -1,0 +1,18 @@
+<!-- prettier-ignore -->
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title%}Submissions{%endblock%} 
+{% block content %}
+
+<h1>Submissions</h1>
+<div class="text">
+  <p>
+    These are all the submissions to the form. If you can't
+    find your contribution, please let us know through
+    filling in the <a href="/contact/">contact form</a> !
+  </p>
+  {% for message in messages %}
+  <p class="message">{{ message }}</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!-- prettier-ignore -->
+{% extends 'base.html' %}
+{% load static %} 
+{% block title%}Contact{%endblock%} 
+{% block content %}
+
+<h1>Contact</h1>
+<div class="text">
+  <p>
+    This is where you can make suggestions, deliver input or
+    give compliments! We try our hardest to get back to
+    every contributor in a timely manner.
+  </p>
+  <form method="POST">
+    {{ form.as_p }}
+    <p>
+      <input type="submit" value="Submit" />
+    </p>
+    {% csrf_token %}
+  </form>
+</div>
+{% endblock %}

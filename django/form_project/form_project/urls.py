@@ -1,5 +1,5 @@
 """
-URL configuration for first_project project.
+URL configuration for form_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -15,18 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from app_1 import views as app_1_views
-from app_2 import views as app_2_views
-from app_3 import views as app_3_views
-from app_4 import views as app_4_views
+from django.urls import path
+from form_app import views
 
 urlpatterns = [
-    path('', app_1_views.index),
+    path('', views.index, name='index'),
+    path('contact/', views.contact, name='contact'),
+    path('submissions/', views.submissions, name='submissions'),
     path('admin/', admin.site.urls),
-    path('records/', app_2_views.index, name='records'),
-    path('help/', app_2_views.help, name='help'),
-    path('users/', app_3_views.users, name='users'),
-    path('form/', app_4_views.form_name_view, name='form'),
-    path('app_4/', app_4_views.index, name='app_4'),
 ]

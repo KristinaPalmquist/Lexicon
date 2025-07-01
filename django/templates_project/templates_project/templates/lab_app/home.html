@@ -1,0 +1,17 @@
+<!-- prettier-ignore-->
+{% extends 'lab_app/base.html' %} 
+{% block title %}
+
+Home
+
+{% endblock %}
+{% block body_block %}
+
+<h1 class="display-1">Welcome home!</h1>
+<p>
+  This is a lab made in Django course in System Developer
+  Python &amp; AI at Lexicon. The lab is focused on creating
+  templates in Django.
+</p>
+<a href="{% url 'lab_app:about' %}">Read more</a>
+{% endblock %}

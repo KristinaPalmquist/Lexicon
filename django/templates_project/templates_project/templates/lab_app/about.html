@@ -1,0 +1,38 @@
+<!-- prettier-ignore-->
+{% extends 'lab_app/base.html' %} 
+{% block title %}
+
+About
+
+{% endblock %}
+{% block body_block %}
+
+<h1 class="display-1">About</h1>
+<p>
+  Create a Django project where you practice using template
+  inheritance. Begin by setting up a base template that
+  contains the overall structure of the site—such as the
+  page title, navigation, and layout containers. This
+  template should include block tags that allow child
+  templates to insert their own content into defined areas.
+  You will work with the following templates:
+</p>
+<dl>
+  <dt>base.html</dt>
+  <dd>
+    The main layout with header, footer, and a content
+    block. This serves as the skeleton that other templates
+    build upon.
+  </dd>
+  <dt>home.html</dt>
+  <dd>
+    A home page that extends base.html and fills in the
+    content block with a welcome or landing message.
+  </dd>
+  <dt>about.html</dt>
+  <dd>
+    An about page that also extends base.html, showing
+    information about the website or the team.
+  </dd>
+</dl>
+{% endblock %}

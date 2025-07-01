@@ -1,0 +1,12 @@
+<!-- prettier-ignore-->
+{% extends 'templates_app/base.html' %} 
+{% block body_block %}
+
+<h1>Welcome to other</h1>
+<h2>This is an example of template inheritance!</h2>
+<a href="{% url 'templates_app:relative' %}"
+  >Link to the Relative Page</a
+>
+<a href="{% url 'admin:index' %}">Link to Admin</a>
+
+{% endblock %}

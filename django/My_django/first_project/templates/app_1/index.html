@@ -4,14 +4,34 @@
 {% block title%}Django{%endblock%} 
 {% block content %}
 
-<h1>Hello this is the image</h1>
+<h1>Hello</h1>
+<h2>this is the image</h2>
 <div class="text">
-  {{ insert_me}}
-  <br /><br /><br />
+  <p>{{ insert_me}}</p>
   <img
     src="{% static 'images/django.jpeg' %}"
     alt="oh no, didn't load"
-    width="200px"
+    width="400"
   />
+  <p>
+    A web page without any styling is like a blank canvas.
+    The possibilities are endless, and it’s easy to waste
+    time experimenting with different layouts, colors, and
+    fonts. But the default browser styles are not ideal, so
+    you need to put in the effort just to get started with a
+    proper design.
+  </p>
+  <p>
+    The following styles will provide a solid foundation
+    that you can later build on. With usability concerns
+    addressed and basic design principles in place, you can
+    focus on your content or continue to refine your design
+    from there.
+  </p>
+  <p>
+    Click the link to get directly to
+    <a href="{% url 'app_4' %}">App 4</a>
+  </p>
 </div>
+
 {% endblock %}

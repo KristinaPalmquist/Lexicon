@@ -1,0 +1,122 @@
+<!-- prettier-ignore -->
+{% extends 'base.html' %}
+{% load static %} 
+{% block title%}Review{%endblock%} 
+{% block content %}
+
+<h1>Review</h1>
+<div class="text">
+  <p>
+    Give us a rating and please comment and give us a review
+  </p>
+  
+  <!-- Show logged-in user -->
+  {% if user.is_authenticated %}
+    <p class="user-info">Logged in as: <strong>{{ user.username }}</strong></p>
+  {% endif %}
+  
+  <!-- Display messages -->
+  {% if messages %}
+    {% for message in messages %}
+      <div class="message {{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+  
+  <form method="POST">
+    {% csrf_token %}
+    
+    <!-- Item being rated -->
+    <div class="form-group">
+      <label for="item">Item/Service:</label>
+      <input type="text" name="item" id="item" placeholder="What are you rating?" required />
+    </div>
+    
+    <!-- Star Rating -->
+    <div class="form-group">
+      <label>Rating:</label>
+      <div class="star-rating-input">
+        <input type="hidden" name="rating" id="rating-value" value="0" />
+        <div class="stars">
+          {% for i in "12345" %}
+            <span class="star" data-value="{{ i }}">★</span>
+          {% endfor %}
+        </div>
+        <span class="rating-text">Click stars to rate</span>
+      </div>
+    </div>
+    
+    <!-- Review title -->
+    <div class="form-group">
+      <label for="title">Review Title:</label>
+      <input type="text" name="title" id="title" placeholder="Brief title for your review" />
+    </div>
+    
+    <!-- Review text -->
+    <div class="form-group">
+      <label for="review">Review:</label>
+      <textarea name="review" id="review" rows="4" placeholder="Write your detailed review here..."></textarea>
+    </div>
+
+    <input type="submit" value="Submit Rating & Review" />
+  </form>
+  
+  <!-- Display recent ratings -->
+  {% if recent_ratings %}
+    <div class="recent-ratings">
+      <h3>Recent Ratings</h3>
+      {% for rating in recent_ratings %}
+        <div class="rating-item">
+          <div class="rating-header">
+            <strong>{{ rating.user.username }}</strong> rated <em>{{ rating.item }}</em>
+            <span class="rating-date">{{ rating.created_at|date:"M d, Y" }}</span>
+          </div>
+          <div class="rating-stars">
+            {% include 'includes/rating.html' with rating_value=rating.rating %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.star-rating-input .star');
+    const ratingValue = document.getElementById('rating-value');
+    const ratingText = document.querySelector('.rating-text');
+    
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            ratingValue.value = value;
+            ratingText.textContent = `${value} star${value !== 1 ? 's' : ''} selected`;
+            
+            // Update star display
+            stars.forEach((s, index) => {
+                if (index < value) {
+                    s.classList.add('selected');
+                } else {
+                    s.classList.remove('selected');
+                }
+            });
+        });
+        
+        star.addEventListener('mouseover', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            stars.forEach((s, index) => {
+                if (index < value) {
+                    s.classList.add('hover');
+                } else {
+                    s.classList.remove('hover');
+                }
+            });
+        });
+    });
+    
+    document.querySelector('.star-rating-input').addEventListener('mouseleave', function() {
+        stars.forEach(s => s.classList.remove('hover'));
+    });
+});
+</script>
+
+{% endblock %}

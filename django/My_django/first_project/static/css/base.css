@@ -1,0 +1,35 @@
+html {
+  box-sizing: border-box;
+  max-width: 70ch;
+  margin: auto;
+  line-height: 1.4;
+  font-size: 1.25em;
+  color: #333;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

@@ -1,42 +1,82 @@
+html {
+  box-sizing: border-box;
+  max-width: 70ch;
+  margin: auto;
+  line-height: 1.4;
+  font-size: 1.25em;
+  color: #333;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
 body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* height: 100vh; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
   background-color: #555;
   font-family: "Courier New", Courier, monospace;
 }
 
 div.container {
-  width: clamp(600px, 50vw, 1200px);
+  /* width: clamp(600px, 50vw, 1200px); */
   padding: 5vw 4vw 6vw;
   border-radius: 1.5rem;
   background-color: #fbd4da;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 div.text {
   border-top: 2px solid hotpink;
+  border-bottom: 2px solid hotpink;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 div.buttons {
-  width: 100%;
+  width: 75%;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  border-bottom: 2px solid hotpink;
 }
-h1 {
+h1,
+h2 {
   text-align: center;
   text-transform: uppercase;
 }
 
 button {
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  margin: 0.3rem;
   border-radius: 1rem;
   font-size: medium;
   text-transform: uppercase;
@@ -50,16 +90,39 @@ button:hover {
 
 table {
   border-collapse: collapse;
+  margin: auto;
 }
 table,
 th,
 td {
-  border: 1px solid black !important;
-  font-size: small;
+  border: 1px solid black;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-form {
+form,
+input,
+textarea {
   width: 100%;
+  padding: 0.4rem;
+}
+
+input,
+textarea {
+  font-size: medium;
+  border-radius: 8px;
+  border: 0.5px solid #333;
+}
+input[type="submit"] {
+  padding: 0.3rem 0.7rem;
+  margin: 0.3rem;
+  border-radius: 1rem;
+  font-size: medium;
+  text-transform: uppercase;
+  background-color: yellow;
+  border: 1px solid #f8f002;
+  align-self: center;
+}
+input[type="submit"]:hover {
+  background-color: #f8f002;
 }

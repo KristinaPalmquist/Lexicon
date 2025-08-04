@@ -1,0 +1,42 @@
+<!-- prettier-ignore-->
+{% extends 'base.html' %} 
+{% block title %}
+Login
+{% endblock %}
+{% block body_block %}
+
+<h1 class="display-1">Login</h1>
+<p>Please login</p>
+<form
+  action="{% url 'login_app:login' %}"
+  method="POST"
+  class="pb-5"
+>
+  {% csrf_token %}
+  <label for="username">Username:</label>
+  <input
+    type="text"
+    name="username"
+    placeholder="Enter Username"
+  />
+
+  <label for="password">Password:</label>
+  <input
+    type="password"
+    name="password"
+    placeholder="Enter Password"
+  />
+
+  <label for="remember_user" class="custom-checkbox">
+    Remember me
+    <input
+      type="checkbox"
+      name="remember_user"
+      id="remember_user"
+    />
+    <span></span>
+  </label>
+  <br />
+  <input type="submit" value="Login" />
+</form>
+{% endblock %}

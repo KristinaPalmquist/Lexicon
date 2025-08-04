@@ -12,8 +12,7 @@
   </head>
   <body>
     <div class="container">
-      {% block content %} {% endblock %}
-      <div class="buttons text">
+      <div class="buttons">
         <a href="/"> <button type="button">Home</button></a>
         <a href="/records/">
           <button type="button">Records</button></a
@@ -34,6 +33,8 @@
           <button type="button">Admin</button></a
         >
       </div>
+
+      {% block content %} {% endblock %}
     </div>
   </body>
 </html>

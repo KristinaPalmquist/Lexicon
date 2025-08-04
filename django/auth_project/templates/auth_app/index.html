@@ -1,0 +1,76 @@
+<!-- prettier-ignore-->
+{% extends 'base.html' %} 
+
+
+{% block title %}
+Home
+{% endblock %}
+{% block body_block %}
+
+<h1 class="display-1">
+  Welcome{% if user.is_authenticated %}
+  <span>{{user.username}}</span>{% endif %}!
+</h1>
+{% if user.is_authenticated %}
+  {% if user.userprofileinfo.profile_pic %}
+  <div class="row">
+  <div class="col-8  d-flex justify-content-center align-items-center">
+    
+  {% endif %}
+{% endif %}
+<p>
+  This is a lab made in Django course in System Developer
+  Python &amp; AI at Lexicon. The lab is focused on users
+  and auth.
+</p>
+
+{% if user.is_authenticated %}
+  {% if user.userprofileinfo.profile_pic %}
+  </div>
+  <div class="col-4  d-flex justify-content-center align-items-center">
+    <img src="{{ user.userprofileinfo.profile_pic.url }}" alt="Profile Picture"  style="
+        vertical-align: middle;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;"/>
+  </div></div>
+  {% endif %}
+{% endif %}
+<h3 class="display-5"> Todays Lab: Login &amp; Logout</h3>
+
+  <p>
+Build a simple Django app that lets users sign in and sign out, and protects a “dashboard” page so only authenticated users can view it.
+  </p>
+         <h5> Required Challenge:</h5>
+<ul>
+  <li>Login page – A form where users enter username &amp; password.</li>
+  <li>Logout link – So logged‑in users can safely sign out.</li>
+<li>Dashboard page – Only visible to users who are logged in; all others are redirected to the login page.</li>
+</ul>
+<h5>Bonus Challenge:</h5>
+<ul>
+  <li>Add “Remember me” (session persistence) checkbox.</li>
+  <li>Display the user’s last login time on the dashboard.</li>
+  <li>Use Django’s messages framework for success/error notifications.
+  </li> 
+</ul>
+
+  {% comment %} <h3 class="display-5">Todays Lab: Registrations</h3>
+  <p>
+    Build a registration system where users can sign up with
+    a username, email, password, and provide additional
+    profile information like a bio and profile picture.
+    Create two forms: A form for basic user details
+    (username, email, password). A second form for extended
+    profile info (bio + optional profile picture). Set up a
+    view to handle the following: Display both forms on one
+    page. Process submitted data. Validate both forms. Hash
+    the password before saving the user. Link the profile to
+    the user (one-to-one relationship). Handle image uploads
+    if a profile picture is submitted. Create a template
+    that: Displays both forms on the same page. Shows
+    success message after successful registration.
+  </p> {% endcomment %}
+  {% endblock %}
+</h2>

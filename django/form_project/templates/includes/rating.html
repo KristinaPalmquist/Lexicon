@@ -1,0 +1,15 @@
+<div
+  class="star-rating"
+  data-rating="{{ rating_value|default:0 }}"
+>
+  {% for i in "12345" %}
+  <span class="star" data-value="{{ i }}">★</span>
+  {% endfor %}
+</div>
+
+<!-- Display current rating value -->
+{% if rating_value %}
+<div class="rating-display">
+  Rating: {{ rating_value }}/5 stars
+</div>
+{% endif %}

@@ -1,0 +1,24 @@
+<!-- prettier-ignore-->
+{% extends 'base.html' %} 
+{% block title %}
+Register
+{% endblock %}
+{% block body_block %}
+
+
+{% if registered %}
+<h1 class="display-1">Thank you for registering!</h1>
+{% else %}
+<h1 class="display-1">Register</h1>
+<h5 class="display-5">Fill out the form</h5>
+<form
+  enctype="multipart/form-data"
+  method="post"
+  class="pb-5"
+>
+  {% csrf_token %}
+  <br />
+  {{ user_form.as_p}} {{ profile_form.as_p}}
+  <input type="submit" value="Submit" />
+</form>
+{% endif %} {% endblock %}

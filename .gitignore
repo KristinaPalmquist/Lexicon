@@ -3,3 +3,29 @@ database/.env
 tf_env/
 **/__pycache__/
 *.pyc
+
+# Virtual environments and conda environments
+tf_env/
+tensorflow/
+venv/
+env/
+.env/
+anaconda3/
+miniconda3/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large binary files
+*.dylib
+*.so
+*.dll
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,2 +1,5 @@
 database/.gitignore
 database/.env
+tf_env/
+**/__pycache__/
+*.pyc

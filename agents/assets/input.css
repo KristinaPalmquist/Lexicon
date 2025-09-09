@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-hotpink: #ff1493;
+    --brand-lightpink: #ffe4f0;
+    --brand-brightyellow: #ffed00;
+  }
+}

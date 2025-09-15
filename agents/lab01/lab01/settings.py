@@ -34,9 +34,10 @@ if not SECRET_KEY:
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "https://first-chat-8lit.onrender.com",
-    "localhost",
-    "127.0.0.1"
+    'https://first-chat-8lit.onrender.com',
+    '.onrender.com',
+    'localhost',
+    '127.0.0.1',
 ]
 
 

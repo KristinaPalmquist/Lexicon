@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from dotenv import load_dotenv
 import os
 from openai import OpenAI
-from google import genai
+import google.generativeai as genai
 from groq import Groq
 
 

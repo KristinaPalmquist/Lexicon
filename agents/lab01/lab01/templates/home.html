@@ -28,6 +28,44 @@
       >
       {{ request.POST.question }}</textarea
       >
+      <fieldset
+        class="mb-4 w-full flex flex-col items-center"
+      >
+        <legend
+          class="mb-2 font-semibold text-lg text-center"
+        >
+          Choose language model:
+        </legend>
+        <div class="flex gap-4 w-full justify-evenly">
+          <div class="flex items-center gap-2">
+            <input
+              type="radio"
+              id="openai"
+              name="language_model"
+              value="openai"
+            />
+            <label for="openai">OpenAI</label>
+          </div>
+          <div class="flex items-center gap-2">
+            <input
+              type="radio"
+              id="gemini"
+              name="language_model"
+              value="gemini"
+            />
+            <label for="gemini">Gemini</label>
+          </div>
+          <div class="flex items-center gap-2">
+            <input
+              type="radio"
+              id="groq"
+              name="language_model"
+              value="groq"
+            />
+            <label for="groq">Groq</label>
+          </div>
+        </div>
+      </fieldset>
       <button
         type="submit"
         class="bg-yellow-300 text-2xl text-black font-thin px-4 py-2 rounded hover:bg-yellow-400 hover:font-normal mt-2"

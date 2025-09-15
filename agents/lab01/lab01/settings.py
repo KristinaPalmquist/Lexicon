@@ -33,7 +33,11 @@ if not SECRET_KEY:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://first-chat-8lit.onrender.com"]
+ALLOWED_HOSTS = [
+    "https://first-chat-8lit.onrender.com",
+    "localhost",
+    "127.0.0.1"
+]
 
 
 # Application definition

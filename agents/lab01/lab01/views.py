@@ -1,9 +1,9 @@
-import os
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from dotenv import load_dotenv
+# import os
 # from openai import OpenAI
 # from google import genai
-from groq import Groq
+# from groq import Groq
 
 load_dotenv()
 
@@ -13,6 +13,10 @@ def home(request):
     question = None
     if request.method == "POST":
         question = request.POST.get("question")
+        answer = 'Don - the big bad AI machine'
+        request.session['answer'] = answer
+        request.session['question'] = question
+        return redirect('home')
         '''Open AI'''
         # openai_api_key = os.getenv('OPENAI_API_KEY')
         # openai_client = OpenAI(api_key=openai_api_key)
@@ -22,9 +26,12 @@ def home(request):
         #         messages=[{"role": "user", "content": question}]
         #     )
         #     answer = response.choices[0].message.content
+        #     request.session['answer'] = answer
+        #     request.session['question'] = question
+        #     return redirect('home')
         # except Exception as e:
         #     answer = f"Error: {e}"
-        
+
         '''Google'''
         # GEMINI_API_KEY = os.getenv('GOOGLE_API_KEY')
         # google_client = genai.Client()
@@ -32,20 +39,32 @@ def home(request):
         #     response = google_client.models.generate_content(
         #         model='gemini-2.5-flash', contents=question)
         #     answer = response.text
+        #     request.session['answer'] = answer
+        #     request.session['question'] = question
+        #     return redirect('home')
         # except Exception as e:
         #     answer = f"Error: {e}"
 
         '''Groq'''
-        groq_api_key = os.getenv('GROQ_API_KEY')
-        groq_client = Groq(api_key=groq_api_key)
-        try:
-            response = groq_client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
-                messages=[{"role": "user", "content": question}]
-            )
-            answer = response.choices[0].message.content
-        except Exception as e:
-            answer = f"Error: {e}"
+        # groq_api_key = os.getenv('GROQ_API_KEY')
+        # groq_client = Groq(api_key=groq_api_key)
+        # try:
+        #     response = groq_client.chat.completions.create(
+        #         model="llama-3.3-70b-versatile",
+        #         messages=[{"role": "user", "content": question}]
+        #     )
+        #     answer = response.choices[0].message.content
+        #     request.session['answer'] = answer
+        #     request.session['question'] = question
+        #     return redirect('home')
+        # except Exception as e:
+        #     answer = f"Error: {e}"
+
+    # Retrieve and clear from session after redirect
+    if 'answer' in request.session:
+        answer = request.session.pop('answer')
+    if 'question' in request.session:
+        question = request.session.pop('question')
 
     return render(request, "home.html", {
         "answer": answer,

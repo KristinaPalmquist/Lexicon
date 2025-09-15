@@ -27,8 +27,11 @@ STATIC_DIR = Path.joinpath(BASE_DIR, 'static')
 load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
+if not SECRET_KEY:
+    raise Exception("SECRET_KEY environment variable not set!")
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 

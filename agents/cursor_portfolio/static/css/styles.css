@@ -11,3 +11,24 @@
 .bg-brightyellow {
   background-color: #ffeb3b;
 }
+
+.bg-gradient {
+  background: linear-gradient(
+    to bottom right,
+    #ff69b4,
+    #ffeb3b,
+    #ffd1dc
+  );
+}
+
+.text-hotpink {
+  color: #ff69b4;
+}
+
+.border-hotpink-40 {
+  border-color: rgba(255, 105, 180, 0.4);
+}
+
+.border-hotpink-20 {
+  border-color: rgba(255, 105, 180, 0.2);
+}

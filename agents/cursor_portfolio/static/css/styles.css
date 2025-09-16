@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.bg-hotpink {
+  background-color: #ff69b4;
+}
+
+.bg-lightpink {
+  background-color: #ffd1dc;
+}
+
+.bg-brightyellow {
+  background-color: #ffeb3b;
+}

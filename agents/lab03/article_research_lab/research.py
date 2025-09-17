@@ -15,7 +15,7 @@ def askAI(question):
         },
     ])
     return response
-    
+
 
 def getSummary(content, article):
     question = (
@@ -23,12 +23,6 @@ def getSummary(content, article):
         "I only want the summary, no opening remarks or other comments."
     )
     response = askAI(question)
-    # response = ollama.chat(model='llama3.2', messages=[
-    #     {
-    #         'role': 'user',
-    #         'content': question
-    #     },
-    # ])
     save_path = os.path.join(summaries_path, article)
     with open(save_path, 'w') as file:
         file.write(response['message']['content'])
@@ -62,10 +56,4 @@ question = (
 )
 
 response = askAI(question)
-# response = ollama.chat(model='llama3.2', messages=[
-#     {
-#         'role': 'user',
-#         'content': question
-#     },
-# ])
 print(response['message']['content'])

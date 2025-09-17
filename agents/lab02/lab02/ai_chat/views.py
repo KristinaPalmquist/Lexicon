@@ -26,7 +26,6 @@ def home(request):
 
     print(Markdown(answer))
 
-
     # Retrieve and clear from session after redirect
     if 'answer' in request.session:
         answer = request.session.pop('answer')

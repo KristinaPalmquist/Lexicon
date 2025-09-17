@@ -1,9 +1,1 @@
-Machine learning is a branch of AI that lets computers learn from data without explicit programming. It focuses on developing models and algorithms that enable systems to think like humans by learning from data.
-
-There are five main types of machine learning:
-
-1. Supervised Learning
-2. Unsupervised Learning
-3. Reinforcement Learning
-4. Semi-Supervised Learning
-5. Self-Supervised Learning
+Machine learning is a type of artificial intelligence that enables computers to learn from data without explicit programming. It is divided into six core types: Supervised Learning (predicts new data), Unsupervised Learning (finds patterns in unlabeled data), Reinforcement Learning (learns through trial and error for decision-making tasks), Semi-Supervised Learning (uses a combination of labeled and unlabeled data), and Self-Supervised Learning (learns from unlabeled data without explicit supervision).

@@ -1,1 +1,1 @@
-Machine learning is a subfield of AI where systems learn from data to identify patterns, make decisions, and improve performance over time without explicit programming.
+Machine learning is a subfield of Artificial Intelligence where systems learn from data to identify patterns, make decisions, and improve performance over time without explicit programming.

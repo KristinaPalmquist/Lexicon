@@ -15,11 +15,10 @@
 .bg-gradient {
   background: linear-gradient(
     to bottom right,
-    #ff69b4,
-    #ffeb3b,
-    #ffd1dc
+    rgba(255, 105, 180, 0.2),
+    rgba(255, 235, 59, 0.2),
+    rgba(255, 209, 220, 0.2) 
   );
-  opacity: 0.2;
 }
 
 .text-hotpink {

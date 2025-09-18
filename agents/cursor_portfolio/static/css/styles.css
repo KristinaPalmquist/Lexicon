@@ -1,6 +1,20 @@
 @import "tailwindcss";
 
+* {
+  cursor: none !important;
+}
+a,
+button,
+input,
+textarea,
+select,
+label {
+  cursor: none !important;
+}
 body {
+  cursor: none !important;
+}
+body:hover {
   cursor: none !important;
 }
 

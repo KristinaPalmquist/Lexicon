@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+.bg-hotpink {
+  background-color: #ff69b4;
+}
+
+.bg-lightpink {
+  background-color: #ffd1dc;
+}
+
+.bg-brightyellow {
+  background-color: #ffeb3b;
+}
+
+.bg-gradient {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 105, 180, 0.2),
+    rgba(255, 235, 59, 0.2),
+    rgba(255, 209, 220, 0.2) 
+  );
+}
+
+.text-hotpink {
+  color: #ff69b4;
+}
+
+.border-hotpink-40 {
+  border-color: rgba(255, 105, 180, 0.4);
+}
+
+.border-hotpink-20 {
+  border-color: rgba(255, 105, 180, 0.2);
+}

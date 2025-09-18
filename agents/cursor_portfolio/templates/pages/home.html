@@ -576,6 +576,25 @@
       >↑</a
     >
 
+    <div
+      id="cursorCircle"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #ec4899;
+        pointer-events: none;
+        z-index: 9999;
+        mix-blend-mode: multiply;
+        transition: background 0.2s;
+      "
+    ></div>
+
+    <!-- prettier-ignore -->
+    {% if debug %}{% django_browser_reload_script %}{% endif %}
     <script>
       (function () {
         const btn = document.getElementById("backToTop");
@@ -650,25 +669,5 @@
           setCircleColor("#ec4899")
         ); // hotpink
     </script>
-
-    <div
-      id="cursorCircle"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: #ec4899;
-        pointer-events: none;
-        z-index: 9999;
-        mix-blend-mode: multiply;
-        transition: background 0.2s;
-      "
-    ></div>
-
-    <!-- prettier-ignore -->
-    {% if debug %}{% django_browser_reload_script %}{% endif %}
   </body>
 </html>

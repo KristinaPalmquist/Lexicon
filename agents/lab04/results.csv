@@ -1,0 +1,7 @@
+input,output,decoding,tokens_out,constraint_passed,notes
+"Through the Looking-Glass, and What Alice Found There is a novel published in December 1871 by Lewis Carroll, a mathematics lecturer at the University of Oxford.","Through the Looking-Glass, and What Alice Found There is a novel published in December 1871 by Lewis Carroll.",beam,18,True,
+"Through the Looking-Glass, and What Alice Found There is a novel published in December 1871 by Lewis Carroll, a mathematics lecturer at the University of Oxford.","Through the Looking-Glass, and What Alice Found There is a novel published in December 1871 by Lewis Carroll.",sampling,18,True,
+"It was the sequel to his Alice's Adventures in Wonderland (1865), in which many of the characters were playing-cards; in this novel the theme is chess.","This is the sequel to his Alice's Adventures in Wonderland (1865), in which many of the characters were playing",beam,19,True,
+"It was the sequel to his Alice's Adventures in Wonderland (1865), in which many of the characters were playing-cards; in this novel the theme is chess.",This novel is the sequel to his Alice's Adventures in Wonderland (1865) In this novel the theme is chess,sampling,19,True,
+"As in the earlier book, the central figure, Alice, finds herself in a fantastical universe.","As in the earlier book, the central figure, Alice,",beam,9,True,
+"As in the earlier book, the central figure, Alice, finds herself in a fantastical universe.","As in the earlier book, the central figure, Alice",sampling,9,True,

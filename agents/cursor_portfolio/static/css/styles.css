@@ -49,10 +49,10 @@ body {
 
 #cursorLazy {
   position: fixed !important;
-  width: 32px !important;
-  height: 32px !important;
+  width: 40px !important;
+  height: 40px !important;
   border-radius: 50% !important;
-  background: #ffd1dc !important;
+  background: rgb(255, 209, 220, 0.2) !important;
   pointer-events: none !important;
   z-index: 9999 !important;
   transition: top 0.15s, left 0.15s !important;

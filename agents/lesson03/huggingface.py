@@ -147,7 +147,7 @@ print("\nSummary:", summary)
 # print("SV:", swedish)
 
 
-model_name = "google/flan-t5-small"
+model_name = "google/flan-t5-base"
 
 # This will automatically find and load the 'model.safetensors' file
 tokenizer = AutoTokenizer.from_pretrained(model_name)

@@ -577,7 +577,22 @@
     >
 
     <div
-      id="cursorCircle"
+      id="cursorDot"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ec4899;
+        pointer-events: none;
+        z-index: 10000;
+        transition: none;
+      "
+    ></div>
+    <div
+      id="cursorLazy"
       style="
         position: fixed;
         top: 0;
@@ -585,11 +600,10 @@
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: #ec4899;
+        background: #ffd1dc;
         pointer-events: none;
         z-index: 9999;
-        mix-blend-mode: multiply;
-        transition: background 0.2s;
+        transition: top 0.15s, left 0.15s;
       "
     ></div>
 
@@ -629,43 +643,35 @@
       document.addEventListener(
         "DOMContentLoaded",
         function () {
-          const circle =
-            document.getElementById("cursorCircle");
-          if (!circle) return;
-
-          // Hide the default cursor
+          const dot = document.getElementById("cursorDot");
+          const lazy =
+            document.getElementById("cursorLazy");
           document.body.style.cursor = "none";
 
-          // Move the circle with the mouse
+          let mouseX = 0,
+            mouseY = 0;
+          let lazyX = 0,
+            lazyY = 0;
+
           document.addEventListener(
             "mousemove",
             function (e) {
-              circle.style.top = e.pageY - 16 + "px";
-              circle.style.left = e.pageX - 16 + "px";
+              mouseX = e.pageX;
+              mouseY = e.pageY;
+              dot.style.top = mouseY - 4 + "px";
+              dot.style.left = mouseX - 4 + "px";
             }
           );
 
-          // Optional: Change color on header/main/footer hover
-          function setCircleColor(color) {
-            circle.style.background = color;
+          function animateLazyCircle() {
+            // Move lazy circle towards the dot
+            lazyX += (mouseX - lazyX) * 0.15;
+            lazyY += (mouseY - lazyY) * 0.15;
+            lazy.style.top = lazyY - 16 + "px";
+            lazy.style.left = lazyX - 16 + "px";
+            requestAnimationFrame(animateLazyCircle);
           }
-
-          ["header", "main", "footer"].forEach((tag) => {
-            const el = document.querySelector(tag);
-            if (el) {
-              el.addEventListener("mouseenter", () => {
-                if (tag === "header")
-                  setCircleColor("#f59e42");
-                if (tag === "main")
-                  setCircleColor("#ec4899");
-                if (tag === "footer")
-                  setCircleColor("#f9a8d4");
-              });
-              el.addEventListener("mouseleave", () => {
-                setCircleColor("#ec4899");
-              });
-            }
-          });
+          animateLazyCircle();
         }
       );
     </script>

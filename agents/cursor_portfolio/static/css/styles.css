@@ -1,35 +1,30 @@
 @import "tailwindcss";
 
-* {
-  cursor: none !important;
-}
 *,
 *:hover,
 *:active,
-*:focus {
-  cursor: none !important;
-}
+*:focus,
 .cursor-pointer,
 .cursor-default,
 .cursor-move,
 .cursor-text,
 .cursor-help,
 .cursor-wait,
-.cursor-not-allowed {
-  cursor: none !important;
-}
+.cursor-not-allowed,
 a,
+a:hover,
+body,
+body:hover,
 button,
+button:hover,
 input,
+input:hover,
 textarea,
+textarea:hover,
 select,
-label {
-  cursor: none !important;
-}
-body {
-  cursor: none !important;
-}
-body:hover {
+select:hover,
+label,
+label:hover {
   cursor: none !important;
 }
 

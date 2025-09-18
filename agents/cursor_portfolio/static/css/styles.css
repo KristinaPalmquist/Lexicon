@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  cursor: none !important;
+}
+
 .bg-hotpink {
   background-color: #ff69b4;
 }
@@ -17,7 +21,7 @@
     to bottom right,
     rgba(255, 105, 180, 0.2),
     rgba(255, 235, 59, 0.2),
-    rgba(255, 209, 220, 0.2) 
+    rgba(255, 209, 220, 0.2)
   );
 }
 
@@ -31,4 +35,12 @@
 
 .border-hotpink-20 {
   border-color: rgba(255, 105, 180, 0.2);
+}
+
+#cursorCircle {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 99999 !important;
+  pointer-events: none !important;
 }

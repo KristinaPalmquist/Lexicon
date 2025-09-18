@@ -624,50 +624,50 @@
         io.observe(footer);
       })();
     </script>
+
     <script>
-      const circle =
-        document.getElementById("cursorCircle");
-      document.addEventListener("mousemove", (e) => {
-        circle.style.top = e.clientY - 16 + "px";
-        circle.style.left = e.clientX - 16 + "px";
-      });
+      document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+          const circle =
+            document.getElementById("cursorCircle");
+          if (!circle) return;
 
-      function setCircleColor(color) {
-        circle.style.background = color;
-      }
+          // Hide the default cursor
+          document.body.style.cursor = "none";
 
-      document
-        .querySelector("header")
-        .addEventListener("mouseenter", () =>
-          setCircleColor("#f59e42")
-        ); // brightyellow
-      document
-        .querySelector("header")
-        .addEventListener("mouseleave", () =>
-          setCircleColor("#ec4899")
-        ); // hotpink
+          // Move the circle with the mouse
+          document.addEventListener(
+            "mousemove",
+            function (e) {
+              circle.style.top = e.pageY - 16 + "px";
+              circle.style.left = e.pageX - 16 + "px";
+            }
+          );
 
-      document
-        .querySelector("main")
-        .addEventListener("mouseenter", () =>
-          setCircleColor("#ec4899")
-        ); // hotpink
-      document
-        .querySelector("main")
-        .addEventListener("mouseleave", () =>
-          setCircleColor("#f59e42")
-        ); // brightyellow
+          // Optional: Change color on header/main/footer hover
+          function setCircleColor(color) {
+            circle.style.background = color;
+          }
 
-      document
-        .querySelector("footer")
-        .addEventListener("mouseenter", () =>
-          setCircleColor("#f9a8d4")
-        ); // lightpink
-      document
-        .querySelector("footer")
-        .addEventListener("mouseleave", () =>
-          setCircleColor("#ec4899")
-        ); // hotpink
+          ["header", "main", "footer"].forEach((tag) => {
+            const el = document.querySelector(tag);
+            if (el) {
+              el.addEventListener("mouseenter", () => {
+                if (tag === "header")
+                  setCircleColor("#f59e42");
+                if (tag === "main")
+                  setCircleColor("#ec4899");
+                if (tag === "footer")
+                  setCircleColor("#f9a8d4");
+              });
+              el.addEventListener("mouseleave", () => {
+                setCircleColor("#ec4899");
+              });
+            }
+          });
+        }
+      );
     </script>
   </body>
 </html>

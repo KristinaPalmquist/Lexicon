@@ -576,36 +576,8 @@
       >↑</a
     >
 
-    <div
-      id="cursorDot"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #ec4899;
-        pointer-events: none;
-        z-index: 10000;
-        transition: none;
-      "
-    ></div>
-    <div
-      id="cursorLazy"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: #ffd1dc;
-        pointer-events: none;
-        z-index: 9999;
-        transition: top 0.15s, left 0.15s;
-      "
-    ></div>
+    <div id="cursorDot"></div>
+    <div id="cursorLazy"></div>
 
     <!-- prettier-ignore -->
     {% if debug %}{% django_browser_reload_script %}{% endif %}

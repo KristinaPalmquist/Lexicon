@@ -89,11 +89,7 @@ WSGI_APPLICATION = 'cursor_portfolio.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default=(
-            'postgresql://first_chat_database_user:'
-            '5Wa3Ipo5IGnAn7bPzPgPvbWjTyFUWFWq@'
-            'dpg-d341o9vdiees739vdc20-a/first_chat_database'
-        ),
+        default=os.getenv('DATABASE_URL'),
         conn_max_age=600
     )
 

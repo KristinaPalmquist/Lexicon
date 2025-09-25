@@ -37,10 +37,48 @@ body {
   border-color: rgba(255, 105, 180, 0.2);
 }
 
-#cursorCircle {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  z-index: 99999 !important;
-  pointer-events: none !important;
+/* Hide all default cursors everywhere */
+body,
+*,
+*:hover,
+*:active,
+*:focus,
+a,
+button {
+  cursor: none !important;
+}
+
+/* Hot pink cursor dot */
+#cursorDot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ec4899;
+  pointer-events: none;
+  z-index: 10000;
+  transition: none;
+  opacity: 1;
+}
+
+/* Light pink, see-through lazy circle */
+#cursorLazy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(
+    255,
+    209,
+    220,
+    0.25
+  ); /* light pink, semi-transparent */
+  pointer-events: none;
+  z-index: 9999;
+  transition: top 0.15s, left 0.15s;
+  opacity: 1;
 }

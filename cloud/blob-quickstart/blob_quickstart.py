@@ -6,21 +6,100 @@ from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 load_dotenv()
 connection_string = os.getenv("AZURE_CONNECTION_STRING")
 
+def is_valid_container_name(name):
+    """Validate Azure container name rules"""
+    import re
+    
+    if len(name) < 3 or len(name) > 63:
+        return False
+    
+    if name.startswith('-') or name.endswith('-'):
+        return False
+    
+    if '--' in name:
+        return False
+    
+    if not re.match(r'^[a-z0-9-]+$', name):
+        return False
+    
+    return True
+
 def get_or_create_container(blob_service_client):
     """Get existing container or create new one"""
     containers = list(blob_service_client.list_containers())
     
     if containers:
-        # Use first container or create new one
-        container_name = containers[0].name
-        print(f"Using container: {container_name}")
+        print("\nExisting containers:")
+        for i, container in enumerate(containers):
+            print(f"{i+1}. {container.name}")
+        print(f"{len(containers)+1}. Create new container")
+        
+        try:
+            choice = input(f"\nChoose container (1-{len(containers)+1}): ")
+            choice_num = int(choice)
+            
+            if choice_num <= len(containers):
+                container_name = containers[choice_num-1].name
+                print(f"Using existing container: {container_name}")
+                return container_name
+            else:
+                # Create new container
+                return create_new_container(blob_service_client)
+        except:
+            print("Invalid choice, creating new container...")
+            return create_new_container(blob_service_client)
     else:
-        # Create default container
-        container_name = "quickstart-" + str(uuid.uuid4())[:8]
-        blob_service_client.create_container(container_name)
-        print(f"Created container: {container_name}")
+        # No containers exist, create first one
+        print("No existing containers found.")
+        return create_new_container(blob_service_client)
+
+def create_new_container(blob_service_client):
+    """Create a new container with user-specified name"""
+    print("\n=== CREATE NEW CONTAINER ===")
     
-    return container_name
+    while True:
+        container_name = input("Enter container name (3-63 chars, lowercase, no spaces): ").strip().lower()
+        
+        if not container_name:
+            # Use default if user doesn't provide name
+            container_name = "quickstart-" + str(uuid.uuid4())[:8]
+            print(f"Using default name: {container_name}")
+            break
+        
+        # Replace spaces with hyphens
+        container_name = container_name.replace(' ', '-')
+        
+        # Validate container name
+        if not is_valid_container_name(container_name):
+            print("❌ Invalid container name. Rules:")
+            print("   - 3-63 characters long")
+            print("   - Only lowercase letters, numbers, and hyphens")
+            print("   - Cannot start or end with hyphen")
+            print("   - Cannot have consecutive hyphens")
+            continue
+        
+        # Check if container already exists
+        try:
+            if blob_service_client.get_container_client(container_name).exists():
+                print(f"❌ Container '{container_name}' already exists. Choose a different name.")
+                continue
+        except:
+            pass
+        
+        break
+    
+    try:
+        blob_service_client.create_container(container_name)
+        print(f"✅ Created container: {container_name}")
+        return container_name
+    except Exception as e:
+        print(f"❌ Failed to create container: {e}")
+        # Fallback to default name
+        fallback_name = "quickstart-" + str(uuid.uuid4())[:8]
+        blob_service_client.create_container(fallback_name)
+        print(f"Created fallback container: {fallback_name}")
+        return fallback_name
+
 
 def upload_file(blob_service_client, container_name):
     """Upload files from data folder to Azure"""
@@ -148,14 +227,14 @@ def create_file():
     except Exception as e:
         print(f"Failed to create file: {e}")
 
+
 def main():
     try:
         print("🗄️  Azure Blob Storage Manager")
         print("=" * 35)
         
-        # Initialize Azure connection once
+        # Initialize Azure connection once, but container selection happens each time
         blob_service_client = None
-        container_name = None
         
         while True:
             # Show menu
@@ -182,7 +261,9 @@ def main():
                 if blob_service_client is None:
                     print("\nConnecting to Azure...")
                     blob_service_client = BlobServiceClient.from_connection_string(connection_string)
-                    container_name = get_or_create_container(blob_service_client)
+                
+                # Ask for container selection each time
+                container_name = get_or_create_container(blob_service_client)
                 
                 if choice == "1":
                     upload_file(blob_service_client, container_name)

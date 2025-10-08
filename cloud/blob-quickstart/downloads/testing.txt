@@ -1,1 +1,0 @@
-Hello Blob Storage! This is the third file created as a test
